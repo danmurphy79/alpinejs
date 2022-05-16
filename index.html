@@ -5,6 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AlpineJS 3 things</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
-  <body></body>
+  <body x-data="{open: false}">
+    <div
+      class="bg-black/10 absolute h-screen w-screen flex items-center justify-center"
+      x-show="open"
+    >
+      <div class="p-10 flex flex-col items-center justify-center bg-white">
+        <div class="mb-6">
+          <iframe
+            src="https://giphy.com/embed/1U9c3J29LPXMY"
+            frameborder="0"
+            class="giphy-embed"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div>Hooray! You opened your modal!</div>
+        <div>
+          <button @click="open = false" class="bg-sky-500 text-white p-4 mt-6">
+            Now Close It!
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col items-start p-8 border border-b-1 border-sky-500">
+      <h1 class="text-3xl">3 Things that you can do with AlpineJS</h1>
+      <h2 class="text-xl">Week 1: 5/18/2022</h2>
+      <h3 class="text-lg pt-8">1. You can toggle the state of a modal</h3>
+      <button @click="open = true" class="bg-sky-500 text-white p-4 mt-6">
+        Click me
+      </button>
+    </div>
+  </body>
 </html>
