@@ -41,5 +41,19 @@
         Click me
       </button>
     </div>
+    <div
+      x-data="{date: ''}"
+      class="flex flex-col items-start p-8 border border-b-1 border-sky-500"
+    >
+      <h3 class="text-lg pt-8">2. You can get today's date</h3>
+      <p class="text-md mt-10">Today's date is</p>
+      <span x-text="date" class="font-bold text-5xl"></span>
+      <button
+        @click="date = new Date().toLocaleDateString()"
+        class="bg-sky-500 text-white p-4 mt-6"
+      >
+        Get the date!
+      </button>
+    </div>
   </body>
 </html>
