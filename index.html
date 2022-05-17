@@ -19,12 +19,12 @@
   </head>
   <body
     class="bg-cyan-900 text-white flex items-center flex-col"
-    x-data="{open: false}"
+    x-data="{modalOpen: false}"
   >
     <!-- Modal -->
     <div
       class="bg-black/10 absolute h-screen w-screen flex items-center justify-center"
-      x-show="open"
+      x-show="modalOpen"
     >
       <div class="p-10 flex flex-col items-center justify-center bg-cyan-700">
         <div class="mb-6">
@@ -40,7 +40,7 @@
         <div>Hooray! You opened your modal!</div>
         <div>
           <button
-            @click="open = false"
+            @click="modalOpen = false"
             class="bg-emerald-400 text-cyan-900 p-4 my-6"
           >
             Now Close It!
@@ -59,7 +59,7 @@
       <div class="bg-cyan-800 p-8 mt-8 w-full">
         <h3 class="text-lg">1. You can toggle the state of a modal</h3>
         <button
-          @click="open = true"
+          @click="modalOpen = true"
           class="bg-emerald-400 text-cyan-900 p-4 mt-6"
         >
           Click me
@@ -82,15 +82,15 @@
         </div>
       </div>
       <div
-        x-data="{date: '', color: 'default'}"
+        x-data="{date: '', secondary: false}"
         class="flex flex-col items-start p-8 mt-8 bg-cyan-800 w-full"
-        :class='color === "secondary" ? "bg-emerald-500" : ""'
+        :class='secondary ? "bg-emerald-500" : ""'
       >
         <h3 class="text-lg">3. You can dynamically change classes</h3>
         <button
-          @click="color = 'secondary'"
+          @click="secondary = !secondary"
           class="bg-emerald-400 text-cyan-900 p-4 my-6"
-          :class='color === "secondary" ? "!bg-cyan-900 !text-emerald-400" : ""'
+          :class='secondary ? "!bg-cyan-900 !text-emerald-400" : ""'
         >
           Change the classes
         </button>
