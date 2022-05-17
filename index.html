@@ -18,15 +18,15 @@
     ></script>
   </head>
   <body
-    class="bg-cyan-900 text-white flex items-center flex-col"
-    x-data="{open: false}"
+    class="bg-cyan-600 text-white flex items-center flex-col"
+    x-data="{modalOpen: false}"
   >
     <!-- Modal -->
     <div
-      class="bg-black/10 absolute h-screen w-screen flex items-center justify-center"
-      x-show="open"
+      class="bg-black/60 fixed h-screen w-screen flex items-center justify-center"
+      x-show="modalOpen"
     >
-      <div class="p-10 flex flex-col items-center justify-center bg-cyan-700">
+      <div class="p-10 flex flex-col items-center justify-center bg-white">
         <div class="mb-6">
           <iframe
             src="https://giphy.com/embed/3oz8xHEisOJuebgmhq"
@@ -37,10 +37,10 @@
             allowfullscreen
           ></iframe>
         </div>
-        <div>Hooray! You opened your modal!</div>
+        <div class="text-black">Hooray! You opened your modal!</div>
         <div>
           <button
-            @click="open = false"
+            @click="modalOpen = false"
             class="bg-emerald-400 text-cyan-900 p-4 my-6"
           >
             Now Close It!
@@ -50,26 +50,26 @@
     </div>
 
     <div class="flex flex-col items-start p-8 w-1/2">
-      <!-- Header -->
       <div>
+        <img
+          src="https://revelry.co/wp-content/uploads/2022/05/Revelry-Development-Logo-Midnight.png"
+          alt=""
+          class="w-60"
+        />
         <h1 class="text-5xl mb-6 font-bold">
           3 Things that you can do with AlpineJS
         </h1>
-        <h2 class="text-xl">Week 1: 5/18/2022</h2>
+        <h2 class="text-xl">Week 1: May 18, 2022</h2>
       </div>
-
-      <!-- First Section -->
       <div class="bg-cyan-800 p-8 mt-8 w-full">
         <h3 class="text-lg">1. You can toggle the state of a modal</h3>
         <button
-          @click="open = true"
+          @click="modalOpen = true"
           class="bg-emerald-400 text-cyan-900 p-4 mt-6"
         >
           Click me
         </button>
       </div>
-
-      <!-- Second Section -->
       <div
         x-data="{date: ''}"
         class="flex flex-col items-start p-8 mt-8 bg-cyan-800 w-full"
