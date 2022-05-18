@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AlpineJS 3 things</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+
+  <!-- Body -->
+  <body
+    class="bg-cyan-600 text-white flex items-center flex-col"
+    x-data="{modalOpen: false}"
+  >
+    <!-- Modal -->
+    <div
+      class="bg-black/60 fixed h-screen w-screen flex items-center justify-center"
+      x-show="modalOpen"
+    >
+      <div class="p-10 flex flex-col items-center justify-center bg-white">
+        <div class="mb-6">
+          <iframe
+            src="https://giphy.com/embed/3oz8xHEisOJuebgmhq"
+            width="480"
+            height="330"
+            frameborder="0"
+            class="giphy-embed"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="text-black">Hooray! You opened your modal!</div>
+        <div>
+          <button
+            @click="modalOpen = false"
+            class="bg-emerald-400 text-cyan-900 p-4 my-6"
+          >
+            Now Close It!
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex flex-col items-start p-8 w-3/4">
+      <div>
+        <img
+          src="https://revelry.co/wp-content/uploads/2022/05/Revelry-Development-Logo-Midnight.png"
+          alt=""
+          class="w-60"
+        />
+        <h1 class="text-5xl mb-6 font-bold">
+          3 Things that you can do with AlpineJS
+        </h1>
+        <h2 class="text-xl">Week 1: May 18, 2022</h2>
+      </div>
+      <div class="bg-cyan-800 p-8 mt-8 w-full">
+        <h3 class="text-lg">1. You can toggle the state of a modal</h3>
+        <button
+          @click="modalOpen = true"
+          class="bg-emerald-400 text-cyan-900 p-4 mt-6"
+        >
+          Click me
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
